@@ -11,9 +11,10 @@
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/sched/signal.h>
+#include <linux/of.h>
 #include <linux/of_address.h>
 #include <linux/of_irq.h>
-#include <linux/of_platform.h>
+#include <linux/platform_device.h>
 #include <linux/property.h>
 #include <linux/slab.h>
 
@@ -307,7 +308,6 @@ static void mpc_i2c_setup_512x(struct device_node *node,
 {
 	struct device_node *node_ctrl;
 	void __iomem *ctrl;
-	const u32 *pval;
 	u32 idx;
 
 	/* Enable I2C interrupts for mpc5121 */
